@@ -1,0 +1,72 @@
+.card-group{
+	padding: 8em;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+
+}
+
+.caja > img{
+	width: 100%;
+	object-fit: cover;
+
+}
+
+.caja{
+	width: 29%;
+	height: 78vh;
+	margin: 10px;
+	overflow: hidden;
+  background: #fff;
+ border-radius: 6px;
+	box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+	background-color: rgb(255, 255, 255);
+	cursor: pointer;
+	transition-property: box-shadow;
+	transition-duration: 0.3s;
+	text-align: center;
+
+}
+.caja:hover{
+	 box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
+   transform: translateY(10px);
+}
+.caja1{
+	border-top: 1px solid rgb(230, 230, 230);
+	display: flex;
+	flex-flow: column;
+}
+.caja1 * + *{
+	margin-bottom: 0.5em;
+}
+
+.oferta{
+	background-color: rgb(52, 131, 250);
+	color: rgb(255, 255, 255);
+	font-size: 600;
+	width: 90%;
+}
+.precio{
+	font-size: 1.5em;
+}
+.caja a{
+text-align: inherit;
+	margin-top: 10px;
+	text-decoration: none;
+  display: inline-block;
+ width: 80%;
+  padding: 10px;
+  color: #8000ff;
+  border: 1px solid #8000ff;
+  border-radius: 4px;
+  transition: all 400ms ease;
+
+}
+
+.caja a:hover{
+	background: #8000ff;
+  color: #fff;
+
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="contacto.css">
+    <title>Página de Contacto</title>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="zorrito.png" width="220px" height="170">
+    </div>
+  
+    <a href="index.html" class="boton-regreso">Regreso</a>
+  
+    <h1>Contacto</h1>
+    <form action="/enviar" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required><br><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+      
+      <label for="asunto">Asunto:</label>
+      <select id="asunto" name="asunto" required>
+          <option value="" disabled selected>Seleccionar asunto</option>
+          <option value="Consultas sobre productos">Consultas sobre productos</option>
+          <option value="Información de tallas y medidas">Información de tallas y medidas</option>
+          <option value="Estado de un pedido">Estado de un pedido</option>
+          <option value="Devoluciones y cambios">Devoluciones y cambios</option>
+          <option value="Consultas sobre envío y entrega">Consultas sobre envío y entrega</option>
+          <option value="Problemas con el sitio web">Problemas con el sitio web</option>
+          <option value="Consultas sobre promociones y descuentos">Consultas sobre promociones y descuentos</option>
+          <option value="Consultas sobre disponibilidad de productos">Consultas sobre disponibilidad de productos</option>
+          <option value="Consultas sobre métodos de pago">Consultas sobre métodos de pago</option>
+          <option value="Oportunidades de colaboración o asociación">Oportunidades de colaboración o asociación</option>
+          <option value="Otros temas relacionados con la tienda de ropa">Otros temas relacionados con la tienda de ropa</option>
+        </select><br><br>
+      <label for="mensaje">Mensaje:</label><br>
+      <textarea id="mensaje" name="mensaje" rows="5" cols="30" required></textarea><br><br>
+      
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+</body>
+</html>

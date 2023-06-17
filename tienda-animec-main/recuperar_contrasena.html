@@ -1,0 +1,26 @@
+<html>
+<head>
+  <link rel="stylesheet" href="recuperar_contrasena.css">
+  <script>
+    function mostrarMensaje() {
+      alert("Se ha enviado un enlace de recuperación a su correo electrónico.");
+    }
+    
+  </script>
+</head>
+<body>
+  <h1>Recuperar contraseña</h1>
+  <!-- Formulario de recuperación de contraseña -->
+  <div class="caja">
+    <!-- debemos crear ese php -->
+    <form action="procesar_recuperacion_contrasena.php" method="post">
+      <h2>Recuperar contraseña</h2>
+      <div class="incaja">
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+      </div>
+      <input type="submit" value="Enviar" onclick="mostrarMensaje()">
+    </form><a href="index.html" class="boton-regreso">Regreso</a>
+  </div>
+  
+</body>
+</html>

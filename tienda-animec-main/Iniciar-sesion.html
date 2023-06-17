@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/.png" href="zorrito.png">
+    <link rel="stylesheet" href="iniciar-sesion.css">
+    <title>Iniciar sesión</title>
+  </head>
+
+  <body>
+   
+    <div class="caja">
+        <form id="forminicio">
+            <h2>Iniciar Sesion</h2>
+            <div class="incaja">
+                <input type="email" required id="email">
+                <span>Correo Electronico</span>
+                <i></i>
+            </div>
+            <div class="incaja">
+                <input type="password" required id="password">
+                <span>Contraseña</span>
+                <i></i>
+            </div>
+            <div class="link"><a href="recuperar_contrasena.html">¿Has olvidado la contraseña?</a></div>
+
+
+            <input type="submit" value="Iniciar" id="inicio">
+            <br>
+            <p>¿No tienes cuenta?<a href="registro.html"> Registrate</a></p>
+        </form>
+    </div>
+    <script src="inicio.js"></script>
+    <script>
+        const forminicio = document.querySelector('#forminicio')
+forminicio.addEventListener('submit', (e)=> {
+    e.preventDefault() 
+
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+    
+    const Users = JSON.parse(localStorage.getItem('Users')) || []
+    const validUsers = Users.find( user => user.email === email && user.password === password)
+    if(!validUsers) {
+         return alert('El correo y/o la contraseña son incorrectas')
+    }
+    else{
+     alert ('Bienvenido a Anime Cloth')
+    }
+
+/* Acá va el Index a dónde vincula la página al la hora de iniciar sesión*/
+
+    window.location.href = 'index.html'
+
+})
+    </script>
+  </body>
+</html>

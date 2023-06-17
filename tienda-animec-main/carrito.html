@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carrito de Compras</title>
+</head>
+<body>
+  <h1>Carrito de Compras</h1>
+  
+  <div id="carrito">
+    <ul id="productos"></ul>
+    <p>Total a pagar: <span id="total">$0</span></p>
+  </div>
+  
+  <script>
+    // Variables globales
+    var carrito = [];
+    var total = 0;
+    
+    // Función para agregar un producto al carrito
+    function agregarProducto(nombre, precio) {
+      carrito.push({ nombre: nombre, precio: precio, cantidad: 1 });
+      total += precio;
+      
+      // Actualizar la lista de productos y el total en el HTML
+      actualizarCarrito();
+    }
+    
+    // Función para eliminar un producto del carrito
+    function eliminarProducto(index) {
+      total -= carrito[index].precio * carrito[index].cantidad;
+      carrito.splice(index, 1);
+      
+      // Actualizar la lista de productos y el total en el HTML
+      actualizarCarrito();
+    }
+    
+    // Función para incrementar la cantidad de un producto
+    function incrementarCantidad(index) {
+      carrito[index].cantidad++;
+      total += carrito[index].precio;
+      
+      // Actualizar la lista de productos y el total en el HTML
+      actualizarCarrito();
+    }
+    
+    // Función para actualizar el carrito en el HTML
+    function actualizarCarrito() {
+      var productosHTML = '';
+      
+      for (var i = 0; i < carrito.length; i++) {
+        productosHTML += '<li>' + carrito[i].nombre + ' - $' + carrito[i].precio + ' - Cantidad: ' + carrito[i].cantidad + ' <button onclick="incrementarCantidad(' + i + ')">+</button> <button onclick="eliminarProducto(' + i + ')">Eliminar</button></li>';
+      }
+      
+      document.getElementById('productos').innerHTML = productosHTML;
+      document.getElementById('total').textContent = '$' + total;
+    }
+  </script>
+</body>
+</html>

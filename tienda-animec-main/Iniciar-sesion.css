@@ -1,0 +1,184 @@
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    body{
+        display: flex;
+        justify-content: center ;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url(https://i.pinimg.com/originals/29/f6/1c/29f61c6393a0cfd3bd1e577789150867.gif);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        color: #000000;
+    }
+    
+    .caja {
+        position: relative;
+        width: 380px;
+        height: 440px;
+        background: rgb(218, 218, 218);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 25px 30px -20px ;
+    }
+    
+    .caja::before{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 400px;
+        z-index: 2;
+        transform-origin: bottom right;
+    
+    }
+    .caja::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 480px;
+        z-index: 2;
+        transform-origin: bottom right;
+        animation-delay: -4s;
+    
+    }
+    
+    
+    .caja form {
+        position: absolute;
+        inset: 6px;
+        background: rgb(218, 218, 218);
+        padding: 40px 30px;
+        border-radius: 8px;
+        display: flex;
+        z-index: 2;
+        flex-direction: column;
+    }
+    
+    .caja form h2{
+        color: rgb(0, 0, 0);
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        padding: 0px 0px 20px 0px;
+        text-align: center;
+    
+    
+    }
+    
+    
+    .caja form .incaja{
+        position: relative;
+        margin-top: 25px;
+        width: 300px;
+        border-bottom: 1px solid #000000;
+    }
+    
+    .caja form .incaja input{
+        position: relative;
+        padding: 20px 10px 10px;
+        border: none;
+        outline: none;
+        z-index: 10;
+        transition: 0.8s;
+        letter-spacing: 0.07em;
+        box-shadow: none;
+        width: 100%;
+        background: none;
+        color: black;
+        font-size: 16px ;
+    }
+    
+    .caja form .incaja span{
+        position: absolute;
+        pointer-events: none;
+        left: 0;
+        color: #8f8f8f;
+        padding: 20px 0px 10px;
+        transition: 0.8s;
+        letter-spacing: 0.07em;
+        font-size: 1em;
+    }
+    
+    .caja form .incaja input:valid ~ span,
+    .caja form .incaja input:focus ~ span{
+        color: #000000;
+        transform: translateY(-34px);
+        font-size: medium;
+    }
+    
+    .caja form .incaja i{
+        position: center;
+        overflow: hidden;
+        pointer-events: none;
+        width: 100%;
+        bottom: 0;
+        background: #000000;
+        height: 2px;
+        border-radius: 4px;
+        transition: 0.6s;
+    }
+    
+    .caja form .incaja input:valid ~ i,
+    .caja form .incaja input:focus ~ i{
+        height: 46px;
+    
+    }
+    
+    .link {
+        margin: 25px 0px 20px 5px;
+        color: blue;
+        cursor: pointer;
+    }
+    
+    .link:hover{
+        text-decoration: underline;
+    }
+    
+    input[ type= "submit"]{
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        border: 1px solid;
+        cursor: pointer;
+        outline: none;
+        color: white;
+        background: #000000;
+        font-size: 18px;
+    
+    }
+    
+    input[ type= "submit"]:hover{
+        border-color: #000000;
+        transition: -6s;
+        
+    }
+    
+    .caja p{
+      display: flex;
+      justify-content: center;
+      font-size: medium;
+    
+    
+    }
+    .caja a{
+    color: #000000;
+    text-decoration: none;
+    font-size: medium;
+    display: flex;
+    margin-left: 5px;
+    
+    
+    }
+    
+    .caja a:hover{
+    color: blue;
+    text-decoration: underline;
+    }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registro.css">
+    <link rel="icon" type="image/png" href="zorrito.png">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="caja">
+        <form id="formregistro">
+            <h2>Registrarse</h2>
+            <div class="incaja">
+                <input type="text" required id="name" autofocus>
+                <span>Nombre y Apellido</span>
+                <i></i>
+            </div>
+            <div class="incaja">
+                <input type="email" required id="email" autofocus>
+                <span>Correo Electronico</span>
+                <i></i>
+            </div>
+            <div class="incaja">
+                <input required id="password" class="pass" action="hide">
+                <span>Contraseña</span>
+                <i></i>
+            </div>
+            
+            <div class="link"> <input type="checkbox" name="check"s> Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></div>
+            <input type="submit" value="Registrarse" id="registrar">
+
+            <br>
+            <p><a href="Iniciar-sesion.html">¿Ya tengo una cuenta?</a></p>
+
+        </form>
+
+    </div>
+
+    <script src="registro.js">
+        const formregistro = document.querySelector('#formregistro')
+formregistro.addEventListener('submit', (e)=> {
+    e.preventDefault();
+
+    const name = document.querySelector('#name').value
+    const email = document.querySelector ('#email').value
+    const password = document.querySelector ('#password').value
+
+    const Users = JSON.parse(localStorage.getItem('Users')) || []
+    const isUsersRegistred = Users.find( user => user.email === email)
+    if(isUsersRegistred){
+        return alert ('El usuario ya ha sido registrado')
+    }
+    else{
+        alert('El regitro ha sido exitosa')
+    }
+
+
+    Users.push({name: name, email: email, password: password})
+    localStorage.setItem('Users', JSON.stringify(Users))
+    
+
+    window.location.href = 'Iniciar-sesion.html'
+
+})
+    </script>
+
+</body>
+</html>
